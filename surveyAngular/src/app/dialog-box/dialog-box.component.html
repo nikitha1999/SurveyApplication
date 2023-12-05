@@ -1,0 +1,21 @@
+<!--
+  Authors:
+	Nikitha Ranga
+	Niharika
+	Sridevi Movva
+	Shubhakar Kodunu
+-->
+<h1 mat-dialog-title>Row Action :: <strong>{{ action }}</strong></h1>
+<div mat-dialog-content>
+  <div *ngFor="let column of getColumnNames()">
+    <label>{{ column }}</label>
+    <mat-form-field>
+      <input *ngIf="action !== 'Delete'" matInput [(ngModel)]="local_data[column]" />
+      <div *ngIf="action === 'Delete'">{{ local_data[column] }}</div>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()">{{ action }}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>

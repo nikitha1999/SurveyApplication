@@ -1,0 +1,26 @@
+<!-- Authors:
+	Nikitha Ranga
+	Niharika
+	Sridevi Movva
+	Shubhakar Kodunu
+
+Main App Component - Consists 3 Tabs-->
+<mat-tab-group animationDuration="2000ms">
+  <mat-tab label="Home">
+      <div class="tab-content" id="home">
+          <app-home-page></app-home-page>
+          <br><br><br><br><br><br>
+          <app-landing-page></app-landing-page>
+      </div>
+  </mat-tab>
+  <mat-tab label="Student Survey Form Page">
+      <div class="tab-content" id="survey">
+          <app-styled-form></app-styled-form>
+      </div>
+  </mat-tab>
+  <mat-tab label="List All Surveys Page">
+      <div class="tab-content" id="all">
+          <app-list-all-surveys></app-list-all-surveys>
+      </div>
+  </mat-tab>
+</mat-tab-group>

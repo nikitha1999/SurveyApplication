@@ -1,0 +1,84 @@
+.professional-form {
+    background-color: #f3f3f3;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-mat-field {
+    width: 100%;
+  }
+  
+  .custom-label {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Trirong", serif;
+  }
+  
+  .custom-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  .custom-checkbox-group {
+    margin-top: 10px;
+  }
+  
+  .custom-radio-group {
+    margin-top: 10px;
+  }
+  
+  .custom-submit-button {
+    background-color: #007BFF;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .custom-reset-button {
+    background-color: #FF5733;
+    color: white;
+  }
+  
+  .custom-submit-button:hover,
+  .custom-reset-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Checkbox styling */
+.custom-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Trirong", serif;
+  }
+  
+  .mat-checkbox {
+    margin-right: 10px;
+    font-family: "Trirong", serif;
+  }
+  
+  /* Radio button styling */
+  .custom-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Trirong", serif;
+  }
+  
+  .mat-radio-button {
+    margin-right: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .form-check {
+    margin-bottom: 10px;
+  }

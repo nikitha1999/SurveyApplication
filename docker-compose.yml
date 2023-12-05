@@ -3,12 +3,12 @@ version: '3.8'
 services:
   angular-app:
     build:
-      context: ./surveyUI
+      context: ./surveyAngular
       dockerfile: Dockerfile
     ports:
       - "4200:4200"
     volumes:
-      - ./surveyUI:/app
+      - ./surveyAngular:/app
     command: ng serve --host 0.0.0.0
 
   springboot-app:

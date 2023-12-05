@@ -1,0 +1,104 @@
+<!--
+  Authors:
+	Nikitha Ranga
+	Niharika
+	Sridevi Movva
+	Shubhakar Kodunu
+-->
+<!-- Component page for Survey Form -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+
+<!-- Adding Required Fields -->
+<form #myForm="ngForm" (ngSubmit)="submitForm(myForm)" class="professional-form">
+<div class="form-field">
+    <mat-form-field class="custom-mat-field">
+        <mat-label class="custom-label">First Name</mat-label>
+        <input matInput type="text" id="firstname" name="firstname" ngModel required class="custom-input" [(ngModel)]="surveyData.firstname" >
+    </mat-form-field>
+</div>
+<div class="form-field">
+    <mat-form-field class="custom-mat-field">
+        <mat-label class="custom-label">Last Name</mat-label>
+        <input matInput type="text" id="lastname" name="lastname" ngModel required class="custom-input" [(ngModel)]="surveyData.lastname" >
+    </mat-form-field>
+</div>
+<div class="form-field">
+    <mat-form-field class="custom-mat-field">
+        <mat-label class="custom-label">Email</mat-label>
+        <input matInput type="email" id="email" name="email" ngModel required class="custom-input" [(ngModel)]="surveyData.email" >
+    </mat-form-field>
+</div>
+<div class="form-field">
+    <mat-form-field class="custom-mat-field">
+        <mat-label class="custom-label">Street Address</mat-label>
+        <input matInput type="text" id="street" name="street" ngModel required class="custom-input" [(ngModel)]="surveyData.address" >
+    </mat-form-field>
+</div>
+<div class="form-field">
+    <mat-form-field class="custom-mat-field">
+        <mat-label class="custom-label">City</mat-label>
+        <input matInput type="text" id="city" name="city" ngModel required class="custom-input" [(ngModel)]="surveyData.city" >
+    </mat-form-field>
+</div>
+<div class="form-field">
+    <mat-form-field class="custom-mat-field">
+        <mat-label class="custom-label">State</mat-label>
+        <input matInput type="text" id="state" name="state" ngModel required class="custom-input" [(ngModel)]="surveyData.state" >
+    </mat-form-field>
+</div>
+<div class="form-field">
+    <mat-form-field class="custom-mat-field">
+        <mat-label class="custom-label">Zip</mat-label>
+        <input matInput type="text" id="zip" name="zip" ngModel required class="custom-input" [(ngModel)]="surveyData.zip" >
+    </mat-form-field>
+</div>
+<div class="form-field">
+    <mat-form-field class="custom-mat-field">
+        <mat-label class="custom-label">Telephone Number</mat-label>
+        <input matInput type="tel" id="phone" name="phone" ngModel required class="custom-input" [(ngModel)]="surveyData.phone" >
+    </mat-form-field>
+</div>
+<div class="form-group">
+    <label for="date">Date</label>
+    <input type="date" class="form-control" name="date" id="date" [(ngModel)]="surveyData.surveydata" required>
+</div>
+<div class="form-field">
+    <mat-label class="custom-label">What do you like most about the campus?</mat-label>
+    <div *ngFor="let option of likedOptions">
+        <mat-checkbox class="custom-checkbox" [(ngModel)]="surveyData.campus[option]" (change)="onCheckboxChange($event, option)">
+        {{ option }}
+        </mat-checkbox>
+    </div>
+</div>
+<!-- Radio group -->
+<div class="form-field">
+    <mat-label class="custom-label">How did you get interested in the university?</mat-label>
+    <mat-radio-group class="custom-radio-group" name="interestInUniversity"  id="interestInUniversity" [(ngModel)]="surveyData.universityhear" required>
+    <mat-radio-button class="custom-radio" value="Friends">Friends</mat-radio-button>
+    <mat-radio-button class="custom-radio" value="Television">Television</mat-radio-button>
+    <mat-radio-button class="custom-radio" value="Internet">Internet</mat-radio-button>
+    <mat-radio-button class="custom-radio" value="Other">Other</mat-radio-button>
+    </mat-radio-group>
+</div>
+<div class="form-field">
+    <mat-label class="custom-label">How did you get interested in the university?</mat-label>
+    <mat-form-field appearance="fill">
+        <mat-label>Select an option</mat-label>
+        <mat-select [(ngModel)]="surveyData.likelihoodOfRecommendation" name="likelihoodOfRecommendation" required>
+        <mat-option value="very_likely">Very Likely</mat-option>
+        <mat-option value="likely">Likely</mat-option>
+        <mat-option value="Unlikely">Unlikely</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div class="form-field">
+    <mat-form-field class="custom-mat-field">
+        <mat-label class="custom-label">Additional comments</mat-label>
+        <textarea matInput class="custom-input" id="comments" name="comments" [(ngModel)]="surveyData.comments"></textarea>
+    </mat-form-field>
+</div>
+<div class="form-actions">
+    <button mat-raised-button class="custom-submit-button" type="submit" [disabled]="myForm.invalid">Submit</button>
+    <button mat-raised-button class="custom-reset-button" type="reset" #resetButton (click)="resetForm()">Reset</button>
+</div>
+</form>
